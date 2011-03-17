@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+
+repositories {
+    mavenRepo urls: localMavenRepo
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.7'
+    compile 'org.qi4j.core:qi4j-core-api:1.2'
+    compile 'org.qi4j.core:qi4j-core-spi:1.2'
+    compile 'org.qi4j.core:qi4j-core-bootstrap:1.2'
+    compile 'org.qi4j.core:qi4j-core-runtime:1.2'
+}
