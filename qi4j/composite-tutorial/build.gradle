@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
 
 def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
 
@@ -14,3 +15,29 @@ dependencies {
     compile 'org.qi4j.core:qi4j-core-bootstrap:1.2'
     compile 'org.qi4j.core:qi4j-core-runtime:1.2'
 }
+
+task runStep0(dependsOn:'build') << {
+    ant.java(classname: 'com.jabaddon.practices.qi4j.compositetutorial.step0.Main',
+        fork: true,
+        classpath: "${sourceSets.main.runtimeClasspath.asPath}")
+}
+
+task runStep1(dependsOn:'build') << {
+    ant.java(classname: 'com.jabaddon.practices.qi4j.compositetutorial.step1.Main',
+        fork: true,
+        classpath: "${sourceSets.main.runtimeClasspath.asPath}")
+}
+
+task runStep2(dependsOn:'build') << {
+    ant.java(classname: 'com.jabaddon.practices.qi4j.compositetutorial.step2.Main',
+        fork: true,
+        classpath: "${sourceSets.main.runtimeClasspath.asPath}")
+}
+
+task runStep3(dependsOn:'build') << {
+    ant.java(classname: 'com.jabaddon.practices.qi4j.compositetutorial.step3.Main',
+        fork: true,
+        classpath: "${sourceSets.main.runtimeClasspath.asPath}")
+}
+
+task runAllSteps(dependsOn: ['runStep0', 'runStep1', 'runStep2', 'runStep3'])

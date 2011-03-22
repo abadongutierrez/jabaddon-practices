@@ -1,3 +1,11 @@
+Tutorial 1 - Interface refactoring
+
+Qi4j se basa y promueve mucho el uso de interfaces. Esto hace posible que un objeto externamente
+implemente un numero de interfaces las cuales internamente estan basadas en un numero de Mixins,
+los cuales algunos podrian ser de reuso o escritos por uno mismo. Tambien hace posible introducir
+modificadores (interceptores o advices), los cuales son "fragmentos" de codigo que se ejecutan 
+antes o despues de un metodo de un Mixin.
+
 Pasos para el tutorial:
 
 I. Refactorizar la clase HelloWorld un una interface y su implementacion.
