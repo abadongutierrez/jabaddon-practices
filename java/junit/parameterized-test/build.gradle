@@ -1,5 +1,9 @@
 apply plugin: 'groovy'
+<<<<<<< HEAD:junit/parameterized-test/build.gradle
 apply plugin: 'scala'
+=======
+apply plugin: 'eclipse'
+>>>>>>> cb7f818a606273b9d55d9be4269391364b5d1c5f:java/junit/parameterized-test/build.gradle
 
 def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
 
