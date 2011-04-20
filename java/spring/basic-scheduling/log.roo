@@ -1,0 +1,49 @@
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2011-04-19 21:42:54
+quit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2011-04-19 21:42:59
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 21:54:10
+project --topLevelPackage com.abaddon.practices.spring.basicscheduling
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 21:55:01
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 21:55:10
+help
+hint
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+hint
+entity --class ~.dominio.Evento
+hint
+field date --fieldName fechaCreacion --type java.util.Date --notNull 
+hint
+hint controllers
+controller scaffold --class com.abaddon.practices.spring.basicscheduling.web.controllers.EventoController --entity com.abaddon.practices.spring.basicscheduling.dominio.Evento
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 22:00:42
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 22:07:05
+focus --class com.abaddon.practices.spring.basicscheduling.dominio.Evento
+field string --fieldName threadName --sizeMax 100 --notNull 
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 22:10:35
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 22:45:33
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 22:45:52
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 22:47:21
+hint
+help
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 22:49:33
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 23:11:00
+help
+hint
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 23:12:16
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 23:12:25
+poll now
+logging setup --level INFO
+logging setup --level DEBUG --package PROJECT 
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 23:14:21
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-19 23:24:45
+poll now
+persistence setup --provider HIBERNATE --database MYSQL --databaseName basicscheduling --userName root --password admin
+exit
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-19 23:27:25
