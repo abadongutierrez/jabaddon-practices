@@ -7,6 +7,7 @@ package com.jabaddon.practices.qi4j.compositetutorial.step0;
  * @author Abaddon
  */
 public class HelloWorld {
+    // ATRIBUTOS ----------------------------------------------------------------------------------
     private String phrase;
     private String name;
 
@@ -25,8 +26,11 @@ public class HelloWorld {
     public void setName(String name) {
         this.name = name;
     }
+    // ATRIBUTOS ----------------------------------------------------------------------------------
 
+    // COMPORTAMIENTO -----------------------------------------------------------------------------
     public String say() {
         return this.getPhrase() + " " + this.getName();
     }
+    // COMPORTAMIENTO -----------------------------------------------------------------------------
 }
