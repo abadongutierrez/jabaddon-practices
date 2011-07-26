@@ -3,8 +3,10 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_abaddon_practices_spring_basicscheduling_dominio_Evento" modelAttribute="evento" path="/eventoes" render="${empty dependencies}" z="3hZXpxYNdM8YGxeqEM/oWj6oWZw=">
-        <field:datetime dateTimePattern="${evento_fechacreacion_date_format}" field="fechaCreacion" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaCreacion" required="true" z="Cpe/2mGS3odwrvtIKsuaFAXOlH4="/>
+        
     <field:textarea field="threadName" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_threadName" required="true" z="a3obs991rtJSSUTcOwYRXCLWYyo="/>
+    <field:datetime dateTimePattern="${evento_fechainicio_date_format}" field="fechaInicio" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaInicio" required="true" z="V8AfYoIdOSMMCLTnFKErYOaJ4Ow="/>
+    <field:datetime dateTimePattern="${evento_fechatermino_date_format}" field="fechaTermino" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaTermino" z="1BKCfV9ku9+tF3wnQQz2vl0Ui7k="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_abaddon_practices_spring_basicscheduling_dominio_Evento" render="${not empty dependencies}" z="4m7aUlp4fYbMsqV6ZqbnxjGIEPo="/>
 </div>

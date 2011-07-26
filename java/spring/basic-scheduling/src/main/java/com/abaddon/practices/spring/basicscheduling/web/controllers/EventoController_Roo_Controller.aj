@@ -100,7 +100,8 @@ privileged aspect EventoController_Roo_Controller {
     }
     
     void EventoController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("evento_fechacreacion_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("evento_fechatermino_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("evento_fechainicio_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));
     }
     
     String EventoController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

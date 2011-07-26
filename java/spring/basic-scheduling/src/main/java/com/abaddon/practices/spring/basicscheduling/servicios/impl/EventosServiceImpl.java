@@ -14,39 +14,67 @@ public class EventosServiceImpl implements EventosService {
     
     public static final Logger LOGGER = LoggerFactory.getLogger(EventosServiceImpl.class); 
 
-    @Scheduled(cron = "0 */2 * * * *")
+    @Scheduled(cron = "0 */1 * * * *")
+    @org.springframework.transaction.annotation.Transactional
     public void generarEventoCron() {
-        LOGGER.info("Generando el evento CRON...");
-        Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + "-cron");
+        Long idEvento = generarEvento("-cron1");
+        esperaAlgunosSegundos(10);
+        terminarEvento(idEvento);
+    }
+    
+    @Scheduled(cron = "0 */1 * * * *")
+    @org.springframework.transaction.annotation.Transactional
+    public void generarEventoCron2() {
+        Long idEvento = generarEvento("-cron2");
+        esperaAlgunosSegundos(10);
+        terminarEvento(idEvento);     
+    }
+    
+    @Scheduled(cron = "0 */1 * * * *")
+    @org.springframework.transaction.annotation.Transactional
+    public void generarEventoCron3() {
+        Long idEvento = generarEvento("-cron3");
+        esperaAlgunosSegundos(10);
+        terminarEvento(idEvento);
+    }
+    
+    private void terminarEvento(Long idEvento) {
+        Evento.terminarEvento(idEvento);
+    }
+    
+    private void esperaAlgunosSegundos(int segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } 
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Long generarEvento(String postfijo) {
+        Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + postfijo);
         newEvento.persist();
         LOGGER.info("Se ha generado el evento CRON con id [{}]", newEvento.getId());
-    }
-    
-    @Scheduled(cron = "0 */2 * * * *")
-    public void generarEventoCron2() {
-        LOGGER.info("Generando el evento CRON2...");
-        Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + "-cron2");
-        newEvento.persist();
-        LOGGER.info("Se ha generado el evento CRON2 con id [{}]", newEvento.getId());
-    }
-    
-    @Scheduled(cron = "0 */2 * * * *")
-    public void generarEventoCron3() {
-        LOGGER.info("Generando el evento CRON3...");
-        Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + "-cron3");
-        newEvento.persist();
-        LOGGER.info("Se ha generado el evento CRON3 con id [{}]", newEvento.getId());
+        return newEvento.getId();
     }
     
     @Scheduled(fixedDelay = 30000)
+    @org.springframework.transaction.annotation.Transactional
     public void generarEventoFixedDelay() {
-        LOGGER.info("Generando el evento FIXED DELAY...");
-        Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + "-fidexdelay");
-        newEvento.persist();
-        LOGGER.info("Se ha generado el evento FIXED DELAY con id [{}]", newEvento.getId());
+        Long idEvento = generarEvento("-fixeddelay");
+        esperaAlgunosSegundos(10);
+        terminarEvento(idEvento);
     }
     
-    @Scheduled(cron = "0 */2 * * * *")
+    @Scheduled(fixedDelay = 30000)
+    @org.springframework.transaction.annotation.Transactional
+    public void generarEventoFixedDelay2() {
+        Long idEvento = generarEvento("-fixeddelay2");
+        esperaAlgunosSegundos(40);
+        terminarEvento(idEvento);
+    }
+    
+    //@Scheduled(cron = "0 */2 * * * *")
     public void generarEventosSincrono() {
         for (int i = 0; i < 100; ++i) {
             Evento newEvento = Evento.crearEvento(Thread.currentThread().getName() + "-cronEventosSinc-" + i);
@@ -60,7 +88,7 @@ public class EventosServiceImpl implements EventosService {
         }
     }
     
-    @Scheduled(cron = "0 */2 * * * *")
+    //@Scheduled(cron = "0 */2 * * * *")
     public void generarEventosAsincrono() {
         for (int i = 0; i < 100; ++i) {
             generarEvento(i);

@@ -8,12 +8,20 @@ import java.util.Date;
 
 privileged aspect Evento_Roo_JavaBean {
     
-    public Date Evento.getFechaCreacion() {
-        return this.fechaCreacion;
+    public Date Evento.getFechaInicio() {
+        return this.fechaInicio;
     }
     
-    public void Evento.setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
+    public void Evento.setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+    
+    public Date Evento.getFechaTermino() {
+        return this.fechaTermino;
+    }
+    
+    public void Evento.setFechaTermino(Date fechaTermino) {
+        this.fechaTermino = fechaTermino;
     }
     
     public String Evento.getThreadName() {

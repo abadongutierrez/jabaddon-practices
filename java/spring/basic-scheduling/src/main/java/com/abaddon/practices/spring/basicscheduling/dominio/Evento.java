@@ -18,16 +18,28 @@ public class Evento {
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
-    private Date fechaCreacion;
+    private Date fechaInicio;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "S-")
+    private Date fechaTermino;
 
     @NotNull
     @Size(max = 100)
     private String threadName;
 
+    @org.springframework.transaction.annotation.Transactional
     public static Evento crearEvento(String threadName) {
         Evento newEvento = new Evento();
         newEvento.setThreadName(threadName);
-        newEvento.setFechaCreacion(new Date());
+        newEvento.setFechaInicio(new Date());
         return newEvento;
+    }
+    
+    @org.springframework.transaction.annotation.Transactional
+    public static void terminarEvento(Long idEvento) {
+        Evento evento = Evento.findEvento(idEvento);
+        evento.setFechaTermino(new Date());
+        evento.persist();
     }
 }

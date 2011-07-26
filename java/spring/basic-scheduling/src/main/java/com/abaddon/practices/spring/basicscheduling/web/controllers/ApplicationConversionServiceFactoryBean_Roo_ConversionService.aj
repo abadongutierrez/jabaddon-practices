@@ -21,7 +21,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class com.abaddon.practices.spring.basicscheduling.web.controllers.ApplicationConversionServiceFactoryBean.EventoConverter implements Converter<Evento, String>  {
         public String convert(Evento evento) {
-        return new StringBuilder().append(evento.getFechaCreacion()).append(" ").append(evento.getThreadName()).toString();
+        return new StringBuilder().append(evento.getFechaInicio()).append(" ").append(evento.getFechaTermino()).append(" ").append(evento.getThreadName()).toString();
         }
         
     }

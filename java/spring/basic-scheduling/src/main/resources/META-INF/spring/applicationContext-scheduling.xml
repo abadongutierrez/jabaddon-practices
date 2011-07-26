@@ -17,5 +17,5 @@
     
     <task:executor id="my-executor" pool-size="2"/>
     
-    <task:scheduler id="my-scheduler" pool-size="5"/>    
+    <task:scheduler id="my-scheduler" pool-size="2"/>    
 </beans>

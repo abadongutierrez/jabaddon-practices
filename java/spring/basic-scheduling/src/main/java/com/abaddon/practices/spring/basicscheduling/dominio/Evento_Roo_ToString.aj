@@ -9,7 +9,8 @@ privileged aspect Evento_Roo_ToString {
     
     public String Evento.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FechaCreacion: ").append(getFechaCreacion()).append(", ");
+        sb.append("FechaInicio: ").append(getFechaInicio()).append(", ");
+        sb.append("FechaTermino: ").append(getFechaTermino()).append(", ");
         sb.append("ThreadName: ").append(getThreadName());
         return sb.toString();
     }

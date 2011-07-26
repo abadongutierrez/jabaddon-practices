@@ -4,8 +4,10 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_abaddon_practices_spring_basicscheduling_dominio_Evento" items="${eventoes}" z="ux/5Dx/7GB/7HqrlQdMPfeziexA=">
         <table:table data="${eventoes}" id="l_com_abaddon_practices_spring_basicscheduling_dominio_Evento" path="/eventoes" z="792bftWJN/lQHssfh4yxInECHKs=">
-            <table:column date="true" dateTimePattern="${evento_fechacreacion_date_format}" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaCreacion" property="fechaCreacion" z="ghdUtfiTL3DVEBxA6dTO28nuXrs="/>
+            
         <table:column id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_threadName" property="threadName" z="uKk0fKJH8+mW7ObluFxglZnpeEQ="/>
+        <table:column date="true" dateTimePattern="${evento_fechainicio_date_format}" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaInicio" property="fechaInicio" z="vsTIjrgaiGs/DZ5eNuv7TIMvVu8="/>
+        <table:column date="true" dateTimePattern="${evento_fechatermino_date_format}" id="c_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaTermino" property="fechaTermino" z="2Rb71Bmv+RT4sOypyoaKBwE/Jsw="/>
         </table:table>
     </page:list>
 </div>

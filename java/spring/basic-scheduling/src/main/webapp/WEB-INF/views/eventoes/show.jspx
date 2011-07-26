@@ -3,7 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_abaddon_practices_spring_basicscheduling_dominio_Evento" object="${evento}" path="/eventoes" z="o2XePnMT4yAozRHb4umdEzIFS3I=">
-        <field:display date="true" dateTimePattern="${evento_fechacreacion_date_format}" field="fechaCreacion" id="s_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaCreacion" object="${evento}" z="J6rIRMPTo/78heIJ+XNgC0TZ3R4="/>
+        
     <field:display field="threadName" id="s_com_abaddon_practices_spring_basicscheduling_dominio_Evento_threadName" object="${evento}" z="eGrOdsOmJZbKXzKdQIfr6854RjM="/>
+    <field:display date="true" dateTimePattern="${evento_fechainicio_date_format}" field="fechaInicio" id="s_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaInicio" object="${evento}" z="sHv5Dz+2W+vHdroTFb+cCeuJ+Ek="/>
+    <field:display date="true" dateTimePattern="${evento_fechatermino_date_format}" field="fechaTermino" id="s_com_abaddon_practices_spring_basicscheduling_dominio_Evento_fechaTermino" object="${evento}" z="3CGSv4TqFfenZys+pN0fup/Drmg="/>
     </page:show>
 </div>
